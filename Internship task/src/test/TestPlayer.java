@@ -113,7 +113,13 @@ public class TestPlayer {
     @Test
     public void verifyPlayerHPCannotGoBelow20(){
         Player player = new Player(15, Utility.generateCards());
-        assertEquals("Expected an error message, documentation states that player's starting HP is ALWAYS 20.", 20, player.getHealth());
+        assertEquals("Expected an error message, documentation states that player's starting HP is ALWAYS 20. NOTE: Make HP a constant.", 20, player.getHealth());
+    }
+
+    @Test
+    public void verifyPlayerHPCannotBeSetToNegativeValue(){
+        Player player = new Player(-15, Utility.generateCards());
+        assertEquals("Expected an error message, documentation states that player's starting HP is ALWAYS 20. NOTE: Make HP a constant.", 20, player.getHealth());
     }
 
 }
